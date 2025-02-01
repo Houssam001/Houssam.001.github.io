@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Portfolio</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-1/2 flex flex-col items-center justify-center">
+        <img src="/assets/profile.jpg" alt="Houssam Hanafi" class="w-40 h-40 rounded-full border-4 border-blue-500 shadow-lg">
+        <h1 class="text-4xl font-bold mt-4">Houssam Hanafi</h1>
+        <p class="text-xl text-gray-300 mt-2">3D Designer / Animator</p>
+        <a href="#contact" class="mt-6 px-20 py-10 bg-blue-500 text-white font-bold text-2xl rounded-lg shadow-md hover:bg-blue-600 transition">
+            Hire Me
+        </a>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-1/2 h-[2px] bg-gray-700 my-10 mx-auto"></div>
+
+    <!-- Model Navigation -->
+    <section class="w-full h-[500px] bg-gray-800 relative">
+      <div id="scene" class="w-full h-full"></div>
+      <button id="prev" class="absolute left-1/2 bottom-1/4 transform -translate-x-[120px] text-blue-500 text-5xl font-bold hover:text-blue-400 transition">
+        &#10094;
+      </button>
+      <button id="next" class="absolute left-1/2 bottom-1/4 transform translate-x-[120px] text-blue-500 text-5xl font-bold hover:text-blue-400 transition">
+        &#10095;
+      </button>
+    </section>
+    
+
+
+    <!-- Divider -->
+    <div class="w-1/2 h-[2px] bg-gray-700 my-10 mx-auto"></div>
+
+
+    <!-- Pricing Plans -->
+    <section class="w-full py-16 bg-gray-900 text-white">
+        <div class="max-w-5xl mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-8">Pricing Plans</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Basic Model Plan -->
+            <div class="p-6 bg-gray-800 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-semibold mb-4">Basic Model</h3>
+              <p class="text-gray-400">A single moderately detailed 3D model.</p>
+              <p class="text-3xl font-bold my-4">$50</p>
+              <ul class="text-gray-300 text-sm space-y-2 mb-6">
+                <li>✔ Clean topology</li>
+                <li>✔ Textured</li>
+                <li>✔ Optimized for rendering</li>
+              </ul>
+              <button class="w-full py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                Get Started
+              </button>
+            </div>
+      
+            <!-- Animated Model Plan -->
+            <div class="p-6 bg-gray-800 rounded-2xl shadow-lg border-2 border-blue-600">
+              <h3 class="text-2xl font-semibold mb-4">Animated Model</h3>
+              <p class="text-gray-400">A fully rigged and animated 3D model.</p>
+              <p class="text-3xl font-bold my-4">$120</p>
+              <ul class="text-gray-300 text-sm space-y-2 mb-6">
+                <li>✔ Includes rigging</li>
+                <li>✔ Up to 3 animations</li>
+                <li>✔ Game & render-ready</li>
+              </ul>
+              <button class="w-full py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                Get Started
+              </button>
+            </div>
+      
+            <!-- Complete Scene Plan -->
+            <div class="p-6 bg-gray-800 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-semibold mb-4">Complete Scene</h3>
+              <p class="text-gray-400">A full environment or complex composition.</p>
+              <p class="text-3xl font-bold my-4">$250</p>
+              <ul class="text-gray-300 text-sm space-y-2 mb-6">
+                <li>✔ Custom environment</li>
+                <li>✔ Up to 5 objects</li>
+                <li>✔ Lighting & optimization</li>
+              </ul>
+              <button class="w-full py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                Get Started
+              </button>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="w-1/2 h-[2px] bg-gray-700 my-10 mx-auto"></div>
+
+
+      <!-- Feedback and reviews Section -->
+      <section class="w-full max-w-2xl mx-auto my-10 p-6 bg-gray-800 rounded-lg shadow-lg overflow-hidden relative">
+        <h2 class="text-2xl font-bold text-center text-white mb-4">Client Reviews</h2>
+      
+        <div class="relative w-full h-42 flex justify-center items-center overflow-hidden">
+          <div id="review-container" class="absolute w-full text-center transition-transform duration-500 ease-out">
+            <div class="text-4xl font-bold" id="review-initials">A.B.</div>
+            <div class="text-yellow-400 text-lg" id="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="italic mt-2" id="review-text">"Great service and communication!"</p>
+          </div>
+        </div>
+      
+        <div class="flex justify-between mt-4">
+          <button id="prev-review" class="px-4 py-2 bg-gray-600 rounded-lg">←</button>
+          <button id="next-review" class="px-4 py-2 bg-gray-600 rounded-lg">→</button>
+        </div>
+      </section>
+        
+         
+
+
+      <!-- Divider -->
+      <div class="w-1/2 h-[2px] bg-gray-700 my-10 mx-auto"></div>
+
+
+      <!-- Contact Section -->
+      <section id="contact" class="w-full py-16 bg-gray-900 text-white flex flex-col items-center">
+        <h2 class="text-4xl font-bold mb-6">Get a Quote</h2>
+        
+        <!-- Message Box -->
+        <form class="w-full max-w-3xl">
+          <textarea 
+            class="w-full h-40 p-4 text-gray-300 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none resize-none"
+            placeholder="Describe your project here..."
+          ></textarea>
+          
+          <button 
+            type="submit"
+            class="w-full mt-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+          >
+            Submit
+          </button>
+        </form>
+      
+        <!-- Contact Info -->
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-gray-300 text-lg">
+          
+          <!-- Phone -->
+          <a href="tel:+212613305562" class="flex items-center gap-2 hover:text-white transition">
+            📞 +212 61330-5562
+          </a>
+      
+          <!-- Email -->
+          <a href="mailto:houssam-hanafi@hotmail.com" class="flex items-center gap-2 hover:text-white transition">
+            ✉️ houssam-hanafi@hotmail.com
+          </a>
+      
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/houssam-hanafi/" target="_blank" class="flex items-center gap-2 hover:text-white transition">
+            🔗 LinkedIn profile
+          </a>
+      
+
+        <!-- Other Links -->
+        </div>
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-gray-300 text-lg">
+        
+          <!-- Freelancer.com -->
+          <a href="https://www.freelancer.com/u/HoussamHanafi" target="_blank" class="flex items-center gap-2 hover:text-white transition">
+            🔗 Freelancer.com profile
+          </a>
+          <!-- Freelancer.com -->
+          <a href="https://www.fiverr.com/houssamhanafi" target="_blank" class="flex items-center gap-2 hover:text-white transition">
+            🔗 Fiverr profile
+          </a>
+      
+        </div>
+      </section>
+      
+      
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
